@@ -4,6 +4,8 @@ import java.util.Properties;
 
 
 
+
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -13,14 +15,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.estore.backend.model.User;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages="com.niit.diaspora.back")
+@ComponentScan({"com.niit.estore.backend"})
 public class HibernateConfiguration {
 	@Bean(name = "datasource")
 	public static DataSource getDatasource() {
@@ -30,7 +31,7 @@ public class HibernateConfiguration {
         datasource.setDriverClassName("org.h2.Driver");
         //jdbc:oracle:thin:@localhost:1521:SID
         //jdbc:mysql://localhost:3306/test
-        datasource.setUrl("jdbc:h2:tcp://localhost/~/diaspora");
+        datasource.setUrl("jdbc:h2:tcp://localhost/~/estore");
         datasource.setUsername("sa");
         datasource.setPassword("");		
 		return datasource;
