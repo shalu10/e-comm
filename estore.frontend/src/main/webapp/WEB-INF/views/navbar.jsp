@@ -19,6 +19,7 @@
       		</ul>
          
 	  		<ul class="nav navbar-nav navbar-Left">
+	  		
 					<li><a href="Admin Activity"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a>
 			</ul>
 			
