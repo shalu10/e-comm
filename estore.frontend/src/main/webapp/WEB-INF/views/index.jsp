@@ -2,6 +2,7 @@
 <html lang="en">
 		<%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 		<%@include file="header.jsp"%>
+		
 <body>
 <%@include file="navbar.jsp" %>
  		<div class="w3-content" style="max-width:1600px">

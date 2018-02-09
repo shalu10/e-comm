@@ -8,9 +8,17 @@
 <%@include file="navbar.jsp"%>
 <br>
 <br>
+<br>
+<div id="site">
+	<header id="masthead">
+		<center ><h1> Product Details <span class="tagline"></span> </p></h1>
+		</center>
+	</header>
+	<br>
+	
 <!-- <div id="product"> -->
 <div class="container">    
-  <div class="row"><h2>Product Details</h2>
+  <div class="row"><!-- <h2>Product Details</h2> -->
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Dead Space 3 Limited Edition</div>
@@ -26,8 +34,7 @@
         <div class="panel-heading">Product Details</div>
         <div class="panel-body"><table class="table table-striped">
 		<tr><td class="col-sm-2">Product Type:</td><td align="left">BICYCLE</td></tr>
-		<tr><td class="col-sm-2">Description:</td><td align="left"> "A journey across space to discover the source of the Neucromorph outbreak" </td></tr>
-		 <tr><td>Supplier:</td><td>WE ARE GAMES</td></tr> 
+		<tr><td class="col-sm-2">Description:</td><td align="left"> "A journey across space to discover the source of the Neucromorph outbreak" </td></tr>		 
 		<tr><td class="col-sm-2">Price:</td><td align="left">Price:$188.00</td></tr>
 		<tr><td class="col-sm-2">Quantity:</td><td align="pull-right"><input type="text" name="txtQuantity"  /></td></tr>
 		</table></div>

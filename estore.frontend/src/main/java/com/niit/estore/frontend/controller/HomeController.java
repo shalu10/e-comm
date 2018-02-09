@@ -12,9 +12,29 @@ import com.niit.estore.backend.model.User;
 
 @Controller
 public class HomeController {
-	@RequestMapping(value="/")
+	@RequestMapping(value="/index")
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
+		return mv;
+	}
+	@RequestMapping(value="/login")
+	public ModelAndView login() {
+		ModelAndView mv=new ModelAndView("login");
+		return mv;
+	}
+	@RequestMapping(value="/register")
+	public ModelAndView register() {
+		ModelAndView mv=new ModelAndView("register");
+		return mv;
+	}
+	@RequestMapping(value="/products")
+	public ModelAndView products() {
+		ModelAndView mv=new ModelAndView("products");
+		return mv;
+	}
+	@RequestMapping(value="/product")
+	public ModelAndView product() {
+		ModelAndView mv=new ModelAndView("product");
 		return mv;
 	}
 	

@@ -19,8 +19,8 @@
       		</ul>
          
 	  		<ul class="nav navbar-nav navbar-Left">
-	  		
-					<li><a href="Admin Activity"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a>
+	  		        <li><a href="index"><i class="fa fa-home"></i>Home</a></li>
+					<li><a href="Admin Activity"><span class="glyphicon glyphicon-user"></span>Admin</a>
 			</ul>
 			
 		</div>

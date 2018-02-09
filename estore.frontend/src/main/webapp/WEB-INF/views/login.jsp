@@ -3,8 +3,16 @@
 <%@page isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="header.jsp"%>
+<style>
+body{
+    background-color: #525252;
+}
+</style>
+
 <body>
  <%@include file="navbar.jsp" %>
+ <br>
+ <br>
  <div class="w3-content" style="max-width:1600px">
  <header class="w3-container w3-center w3-padding-48 w3-white">
     <h1 class="w3-xxxlarge"><b>THE BICYCLE SHOP</b></h1>

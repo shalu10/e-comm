@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <%@include file="header.jsp"%>
-
+<style>
+body{
+    background-color: #525252;
+}
+</style>
 <body>
  <%@include file="navbar.jsp" %>
+ <br>
+ <br>
 <div class="w3-content" style="max-width:1600px">
  <header class="w3-container w3-center w3-padding-48 w3-white">
     <h1 class="w3-xxxlarge"><b>THE BICYCLE SHOP</b></h1>
@@ -80,7 +86,7 @@
 <!-- Select Basic -->
 
 <!-- Success message -->
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div> -->
 
 <!-- Button -->
 <div class="form-group">
