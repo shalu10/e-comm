@@ -12,7 +12,7 @@ import com.niit.estore.backend.model.User;
 
 @Controller
 public class HomeController {
-	@RequestMapping(value="/index")
+	@RequestMapping(value="/")
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
 		return mv;

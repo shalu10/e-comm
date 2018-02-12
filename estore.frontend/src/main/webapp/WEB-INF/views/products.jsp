@@ -23,9 +23,9 @@
     
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading">Dead Space 3 Limited Edition</div>
+        <div class="panel-heading">SCOTT SPARK</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik1.jpg" class="img-responsive" style="width:100%" ></a></div>
-        <div class="panel-footer">Price:$100</div>
+        <div class="panel-footer">Price:$200</div>
 		</div>
 			<div class="col-sm-offset-6 col-centered"><a href="product"
 			role="button" class="btn btn-success btn-sm btn-block">
@@ -35,7 +35,7 @@
     </div>
 	<div class="col-sm-4"> 
       <div class="panel panel-danger">
-        <div class="panel-heading">Hitman Absolution Professional Edition</div>
+        <div class="panel-heading">JETT MAC</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik2.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <!-- <div class="panel-footer"><a class=""btn btn-warning" role="button" href="product_details.html">VIEW</a> <span class="pull-right">Price:$222.00</span></div> -->
         <div class="panel-footer">Price:$222.00</div>
@@ -48,10 +48,10 @@
     </div>
 	<div class="col-sm-4"> 
       <div class="panel panel-success">
-        <div class="panel-heading">OPERATION FLASHPOINT RED RIVER</div>
+        <div class="panel-heading">SANSACHG</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik3.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <!-- <div class="panel-footer"><a class=""btn btn-warning" role="button" href="product_details.html">VIEW</a> <span class="pull-right">Price:$232.00</span></div> -->
-        <div class="panel-footer">Price:$232.00</div>
+        <div class="panel-footer">Price:$332.00</div>
       </div>
 	  <div class="col-sm-offset-6 col-centered"><a href="product"
 			role="button" class="btn btn-success btn-sm btn-block">
@@ -65,10 +65,10 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading">A LONG WALK TO FREEDOM</div>
+        <div class="panel-heading">ROCK HOVER</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik4.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <!-- <div class="panel-footer"><a class=""btn btn-warning" role="button" href="product_details.html">VIEW</a> <span class="pull-right">Price:$123.00</span></div> -->
-        <div class="panel-footer">Price:$123.00</div>
+        <div class="panel-footer">Price:$247.00</div>
       </div>
 	  <div class="col-sm-offset-6 col-centered"><a href="product"
 			role="button" class="btn btn-success btn-sm btn-block">
@@ -77,10 +77,10 @@
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
-        <div class="panel-heading">POLITICALLY INCORRECT</div>
+        <div class="panel-heading">FIXED GEAR</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik5.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <!-- <div class="panel-footer"><a class=""btn btn-warning" role="button" href="product_details.html">VIEW</a> <span class="pull-right">Price:$23.00</span></div> -->
-        <div class="panel-footer">Price:$22.00</div>
+        <div class="panel-footer">Price:$339.00</div>
       </div>
 	  <div class="col-sm-offset-6 col-centered"><a href="product"
 			role="button" class="btn btn-success btn-sm btn-block">
@@ -89,10 +89,10 @@
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-success">
-        <div class="panel-heading">THE BONE BED</div>
+        <div class="panel-heading">BIG BOY ULTRA</div>
         <div class="panel-body"><a href="product"><img src="./resource/image/bik6.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <!-- <div class="panel-footer"><a class=""btn btn-warning" role="button" href="product_details.html">VIEW</a> <span class="pull-right">Price:$100.00</span></div> -->
-        <div class="panel-footer">Price:$100.00</div>
+        <div class="panel-footer">Price:$250.00</div>
       </div>
 	  <div class="col-sm-offset-6 col-centered"><a href="product"
 			role="button" class="btn btn-success btn-sm btn-block">
