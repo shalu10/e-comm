@@ -18,7 +18,7 @@ body{
 
 	      <div class="wrapper">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="register" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -30,7 +30,7 @@ body{
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
+  <input  name="uname" placeholder="Username" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@ body{
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="upassword" placeholder="Password" class="form-control"  type="password">
     </div>
   </div>
 </div>
@@ -54,7 +54,7 @@ body{
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+  <input name="upassword" placeholder="Confirm Password" class="form-control"  type="password">
     </div>
   </div>
 </div>
@@ -65,7 +65,7 @@ body{
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="uemail" placeholder="E-Mail Address" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -78,7 +78,7 @@ body{
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+  <input name="ucontact" placeholder="(639)" class="form-control" type="text">
     </div>
   </div>
 </div>

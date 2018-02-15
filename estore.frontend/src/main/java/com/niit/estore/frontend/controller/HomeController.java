@@ -1,6 +1,7 @@
 package com.niit.estore.frontend.controller;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,11 @@ import com.niit.estore.backend.model.User;
 @Controller
 public class HomeController {
 	@RequestMapping(value="/")
+	public ModelAndView home() {
+		ModelAndView mv=new ModelAndView("index");
+		return mv;
+	}
+	@RequestMapping(value="/index")
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
 		return mv;
@@ -20,11 +26,6 @@ public class HomeController {
 	@RequestMapping(value="/login")
 	public ModelAndView login() {
 		ModelAndView mv=new ModelAndView("login");
-		return mv;
-	}
-	@RequestMapping(value="/register")
-	public ModelAndView register() {
-		ModelAndView mv=new ModelAndView("register");
 		return mv;
 	}
 	@RequestMapping(value="/products")
