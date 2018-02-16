@@ -38,5 +38,10 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("product");
 		return mv;
 	}
+	@RequestMapping(value="/add")
+	public ModelAndView add() {
+		ModelAndView mv=new ModelAndView("add");
+		return mv;
+	}
 	
 }

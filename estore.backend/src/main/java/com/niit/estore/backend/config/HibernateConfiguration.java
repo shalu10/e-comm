@@ -17,6 +17,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.estore.backend.model.Category;
 import com.niit.estore.backend.model.User;
 
 @Configuration
@@ -52,7 +53,8 @@ public class HibernateConfiguration {
 	public SessionFactory getSessionFactory(DataSource datasource) {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(datasource);
 		sessionBuilder.addProperties(getHibernateProperties());		
-		sessionBuilder.addAnnotatedClass(User.class);	//maps the class with table	
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(Category.class);//maps the class with table	
 		return sessionBuilder.buildSessionFactory();
 	}
 	  
