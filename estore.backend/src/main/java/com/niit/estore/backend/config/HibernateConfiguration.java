@@ -18,6 +18,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.estore.backend.model.Category;
+import com.niit.estore.backend.model.Product;
+import com.niit.estore.backend.model.Supplier;
 import com.niit.estore.backend.model.User;
 
 @Configuration
@@ -32,7 +34,7 @@ public class HibernateConfiguration {
         datasource.setDriverClassName("org.h2.Driver");
         //jdbc:oracle:thin:@localhost:1521:SID
         //jdbc:mysql://localhost:3306/test
-        datasource.setUrl("jdbc:h2:tcp://localhost/~/estore1");
+        datasource.setUrl("jdbc:h2:tcp://localhost/~/demo1");
         datasource.setUsername("sa");
         datasource.setPassword("");		
 		return datasource;
@@ -54,7 +56,9 @@ public class HibernateConfiguration {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(datasource);
 		sessionBuilder.addProperties(getHibernateProperties());		
 		sessionBuilder.addAnnotatedClass(User.class);
-		sessionBuilder.addAnnotatedClass(Category.class);//maps the class with table	
+		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Product.class);//maps the class with table	
 		return sessionBuilder.buildSessionFactory();
 	}
 	  

@@ -2,6 +2,7 @@ package com.niit.estore.frontend.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -38,10 +39,10 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("product");
 		return mv;
 	}
-	@RequestMapping(value="/add")
+/*	@RequestMapping(value="/add")
 	public ModelAndView add() {
 		ModelAndView mv=new ModelAndView("add");
 		return mv;
-	}
+	}*/
 	
 }

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<%@page isELIgnored="false" %>
+<%@page import="com.niit.estore.backend.model.Supplier"%>
+<%@page import="java.util.List"%>
 <html lang="en">
+<%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
  <%@include file="header.jsp" %>
 <body>
 <%@include file="navbar.jsp"%>
@@ -102,6 +106,7 @@
 <br>
 <br>
 <br>
+
       <div class="container">					
 	
     	<div class="row">
@@ -110,16 +115,16 @@
 									
 									
 									<div class="form-group">
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Supplier Name" >
+										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" >
+										<input type="text" name="saddress" id="saddress" tabindex="1" class="form-control" placeholder="Address" >
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" >
+										<input type="email" name="semail" id="semail" tabindex="1" class="form-control" placeholder="Email" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Contact" >
+										<input type="text" name="scontact" id="scontact" tabindex="1" class="form-control" placeholder="Contact" >
 									</div>
 									
 																				
@@ -153,12 +158,21 @@
 					
 					<div class="panel-body">
     	<div class="row">
+<%--     	<%
+    		List<Supplier> supplier=(List<Supplier>) request.getAttribute("supplier");
+    		pageContext.setAttribute("supplier", supplier);
+    		out.println("<h1>" + supplier.size() +"</h1>");
+    	
+    	%> --%>
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addproduct" method="POST" role="form" style="display: block;" >
 																		
 									<div class="form-group">
 									<select   class="form-control" name="sid" id="sid" tabindex="1" >
-										<option value="" disabled selected> Select Supplier Name</option>
+										<option value="Select name"> Select Supplier Name</option>
+										<c:forEach items="${suppliers}" var="s">
+      									<option value="${s.sid}">${s.sname}</option>
+										</c:forEach>
     									</select>
 									</div>
 									<div class="form-group">
@@ -166,8 +180,10 @@
 									</div>
 									<div class="form-group">  
 									<select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
-    									<option value="" disabled selected>Select Product Category</option>										
-    									
+    									<option value="Select name">Select Product Category</option>										
+    									<c:forEach items="${categories}" var="c">
+      									<option value="${c.cid}">${c.cname}</option>      									
+										</c:forEach>
     									</select>
     								</div>
 								

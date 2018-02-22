@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +19,15 @@ import com.niit.estore.backend.model.Supplier;
 
 
 @Controller
-public class CategoryController {
+public class SupplierController {
+	@Autowired
+	private SupplierDao supplierDao;
 	@Autowired
 	private CategoryDao categoryDao;
 	
-	@Autowired
-	private SupplierDao supplierDao;
-	
-	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
-	public ModelAndView addcategory() {
-		ModelAndView mv=new ModelAndView("addcategory");
+	@RequestMapping(value="/addsupplier", method=RequestMethod.GET)
+	public ModelAndView addsupplier() {
+		ModelAndView mv=new ModelAndView("addsupplier");
 		List<Category> categories=categoryDao.findAll();
 		List<Supplier> suppliers=supplierDao.findAll();
 
@@ -37,22 +35,33 @@ public class CategoryController {
 		mv.getModelMap().addAttribute("suppliers",suppliers);
 		return mv;
 	}
-	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
-	public ModelAndView addcategory(HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping(value="/addsupplier", method=RequestMethod.POST)
+	public ModelAndView addsupplier(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("add");
 		List<Category> categories=categoryDao.findAll();
 		List<Supplier> suppliers=supplierDao.findAll();
 
 		mv.getModelMap().addAttribute("categories", categories);
 		mv.getModelMap().addAttribute("suppliers",suppliers);
-		String name=request.getParameter("cname");
-		String description=request.getParameter("cdesc");
-		Category category=new Category();
-		category.setCname(name);
-		category.setCdesc(description);
-		categoryDao.save(category);
+		String name=request.getParameter("sname");
+		String contact=request.getParameter("scontact");
+		String email=request.getParameter("semail");
+		String address=request.getParameter("saddress");
+		
+		
+		Supplier supplier=new Supplier();
+		
+		supplier.setSname(name);
+		supplier.setScontact(contact);
+		supplier.setSemail(email);
+		supplier.setSaddress(address);
+		
+		
+		supplierDao.save(supplier);
 		
 		return mv;		
 			
 	}
 }
+
+
