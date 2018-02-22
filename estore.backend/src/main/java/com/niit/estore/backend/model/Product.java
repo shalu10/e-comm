@@ -27,6 +27,8 @@ public class Product {
 	private int pquantity;
 	@Column(name="product_price")
 	private float pprice;
+	@Column(name="Product_pimage")
+    private String pimage;
 	public int getPid() {
 		return pid;
 	}
@@ -68,6 +70,12 @@ public class Product {
 	}
 	public void setPprice(float pprice) {
 		this.pprice = pprice;
+	}
+	public String getPimage() {
+		return pimage;
+	}
+	public void setPimage(String pimage) {
+		this.pimage = pimage;
 	}
 	
 }

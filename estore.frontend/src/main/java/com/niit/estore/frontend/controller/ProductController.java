@@ -32,9 +32,11 @@ public class ProductController {
 		
 		List<Category> categories=categoryDao.findAll();
 		List<Supplier> suppliers=supplierDao.findAll();
+		List<Product> products=productDao.findAll();
 		
 		mv.getModelMap().addAttribute("categories", categories);
 		mv.getModelMap().addAttribute("suppliers",suppliers);
+		mv.getModelMap().addAttribute("products",products);
 		
 		//mv.addObject("categories", categories);
 		//mv.addObject("suppliers", suppliers);
@@ -62,6 +64,7 @@ public class ProductController {
 	 		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
 	 		product.setPdesc(request.getParameter("pdesc"));
 	 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+	 		product.setPimage(request.getParameter("pimage"));
 	 		
 	 		product.setCid(category);
 	 		product.setSid(supplier);

@@ -99,6 +99,43 @@
 								</form>
 </div>
 </div>
+<br>
+<br>
+ <div class="w3-container">
+  
+  <table class="w3-table-all">
+  
+            
+    <thead>
+      <tr class="w3-gray">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <c:forEach items="${categories}" var="c">
+    	<tr>
+    	<td>
+    	${c.cid}
+    	</td>
+    	<td>
+    	${c.cname}
+    	</td>
+    	<td>
+    	${c.cdesc}
+    	</td>
+    	
+    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+    	</tr>
+    </c:forEach>
+
+    </table>
+    </div>  
+    
+            
+    
 </div>
 
     <div id="menu2" class="tab-pane fade">
@@ -143,6 +180,50 @@
 								</form>
 </div>
 </div>
+<br>
+<br>
+<div class="w3-container">
+  
+  <table class="w3-table-all">
+  
+            
+    <thead>
+      <tr class="w3-gray">
+        <th>Id</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <c:forEach items="${suppliers}" var="s">
+    	<tr>
+    	<td>
+    	${s.sid}
+    	</td>
+    	<td>
+    	${s.sname}
+    	</td>
+    	<td>
+    	${s.semail}
+    	</td>
+    	<td>
+    	${s.scontact}
+    	</td>
+    	<td>
+    	${s.saddress}
+    	</td>
+    	
+    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+    	</tr>
+    </c:forEach>
+    
+    </table>
+    </div>  
+    <br>
+    <br>
 </div>
 
     
@@ -196,9 +277,10 @@
 									<div class="form-group">
 										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
 									</div>
-									
-													
-																
+									<div>
+									<input type="file" name="pimage" id="pimage" tabindex="1" class="form-control"placeholder="Image">				
+									</div>
+									<br>												
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
@@ -217,6 +299,46 @@
 </div>
 </div>
 </div>
+<div class="w3-container">
+  
+  <table class="w3-table-all">
+  
+            
+    <thead>
+      <tr class="w3-gray">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <c:forEach items="${products}" var="p">
+    	<tr>
+    	<td>
+    	${p.pid}
+    	</td>
+    	<td>
+    	${p.pname}
+    	</td>
+    	<td>
+    	${p.pdesc}
+    	</td>
+    	<td>
+    	${p.pquantity}
+    	</td>
+    	<td>
+    	${p.pprice}
+    	</td>
+    	
+    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+    	</tr>
+    </c:forEach>
+    </table>
+    </div>  
+    <br>
 </div>
 </div>
 </div>
