@@ -126,7 +126,7 @@
     	${c.cdesc}
     	</td>
     	
-    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+    	<td><a href="deletecategory?id=${c.cid }"type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
         <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
@@ -215,7 +215,7 @@
     	${s.saddress}
     	</td>
     	
-    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+    	<td><a href="deletesupplier?id=${s.sid } "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
         <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
@@ -332,7 +332,7 @@
     	${p.pprice}
     	</td>
     	
-    	<td><a href=" "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+    	<td><a href="deleteproduct?id=${p.pid } "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
         <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
@@ -357,7 +357,11 @@ $(document).ready(function(){
 });
 </script>
 
-
+<br>
+<br>
+<br>
+<%@include file="footer.jsp"%>
+<br>
 </body>
  </html>
  

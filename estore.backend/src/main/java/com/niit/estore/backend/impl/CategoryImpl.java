@@ -2,9 +2,11 @@ package com.niit.estore.backend.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -25,23 +27,49 @@ private SessionFactory sessionFactory;
 	}
 
 	public void delete(int cid) {
-		// TODO Auto-generated method stub
 		
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(cid));
+		session.getTransaction().commit();
+		session.close();
 	}
 
 	public Category findById(int cid) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		Criteria criteria=session.createCriteria(Category.class);
+		criteria.add(Restrictions.eq("cid", new Integer(cid)));
+		List list=criteria.list();
+		session.getTransaction().commit();
+		session.close();
+		if(!list.isEmpty()){
+			return (Category)list.get(0);
+		}else{
+			return null;
+}
+		
 	}
 
 	public List<Category> findAll() {
-		Session s=sessionFactory.openSession();
+		
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Category";
+		Query query = session.createQuery(hql);
+		List<Category> results =  query.list();
+		System.out.println(results);
+		//session.getTransaction().commit();
+		return results;
+	}
+
+	public void update(Category category) {
+		/*Session s=sessionFactory.openSession();
 		s.beginTransaction();
-		Query query=s.createQuery("from Category");
-		List<Category> list=query.list();
-		System.out.println(list);
+		s.saveOrUpdate(category);
 		s.getTransaction().commit();
-		return list;
+		s.close();		
+		*/
+		
 	}
 
 }

@@ -2,6 +2,7 @@ package com.niit.estore.frontend.controller;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -11,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.estore.backend.dao.CategoryDao;
+import com.niit.estore.backend.dao.ProductDao;
 import com.niit.estore.backend.dao.SupplierDao;
 import com.niit.estore.backend.model.Category;
 import com.niit.estore.backend.model.Supplier;
@@ -26,6 +29,8 @@ public class CategoryController {
 	
 	@Autowired
 	private SupplierDao supplierDao;
+	@Autowired
+	private ProductDao productDao;
 	
 	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
 	public ModelAndView addcategory() {
@@ -55,4 +60,13 @@ public class CategoryController {
 		return mv;		
 			
 	}
+	@RequestMapping(value="deletecategory", method=RequestMethod.GET)
+	public ModelAndView delete(@RequestParam("id") int cid){
+		ModelAndView mv=new ModelAndView("redirect:add");
+		categoryDao.delete(cid);
+		/*mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("suppliers",supplierDao.findAll());
+		mv.getModelMap().addAttribute("products",productDao.findAll());*/
+		return mv;
+	}	
 }

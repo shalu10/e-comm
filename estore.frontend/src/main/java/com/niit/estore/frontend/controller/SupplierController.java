@@ -2,6 +2,7 @@ package com.niit.estore.frontend.controller;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.estore.backend.dao.CategoryDao;
@@ -62,6 +64,15 @@ public class SupplierController {
 		return mv;		
 			
 	}
+	@RequestMapping(value="deletesupplier", method=RequestMethod.GET)
+	public ModelAndView delete(@RequestParam("id") int sid){
+		ModelAndView mv=new ModelAndView("redirect:add");
+		supplierDao.delete(sid);
+		/*mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("suppliers",supplierDao.findAll());
+		mv.getModelMap().addAttribute("products",productDao.findAll());*/
+		return mv;
+	}	
 }
 
 

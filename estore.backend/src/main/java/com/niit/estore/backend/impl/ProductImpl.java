@@ -28,8 +28,12 @@ public class ProductImpl implements ProductDao{
 	}
 
 	public void delete(int pid) {
-		// TODO Auto-generated method stub
 		
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(pid));
+		session.getTransaction().commit();
+		session.close();
 	}
 
 	public Product findById(int pid) {
@@ -56,6 +60,15 @@ public class ProductImpl implements ProductDao{
 		System.out.println(list);
 		s.getTransaction().commit();
 		return list;
+	}
+
+	public void update(Product product) {
+		/*Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		s.saveOrUpdate(product);
+		s.getTransaction().commit();
+		s.close();
+		*/
 	}
 
 }

@@ -4,15 +4,16 @@ package com.niit.estore.backend.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.estore.backend.dao.SupplierDao;
-
+import com.niit.estore.backend.model.Category;
 import com.niit.estore.backend.model.Supplier;
 @Repository
 public class SupplierImpl implements SupplierDao {
@@ -28,25 +29,52 @@ public class SupplierImpl implements SupplierDao {
 	}
 
 	public void delete(int sid) {
-		// TODO Auto-generated method stub
+		
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(sid));
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 
 	public Supplier findById(int sid) {
 		
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		Criteria criteria=session.createCriteria(Supplier.class);
+		criteria.add(Restrictions.eq("sid", new Integer(sid)));
+		List list=criteria.list();
+		session.getTransaction().commit();
+		session.close();
+		if(!list.isEmpty()){
+			return (Supplier)list.get(0);
+		}else{
 			return null;
+		}
 		
 		
 	}
 
 	public List<Supplier> findAll() {
-		Session s=sessionFactory.openSession();
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Supplier";
+		Query query = session.createQuery(hql);
+		List<Supplier> results =  query.list();
+		System.out.println(results);
+		//session.getTransaction().commit();
+		return results;
+	}
+	
+
+	public void update(Supplier supplier) {
+		/*Session s=sessionFactory.openSession();
 		s.beginTransaction();
-		Query query=s.createQuery("from Supplier");
-		List<Supplier> list=query.list();
-		System.out.println(list);
+		s.saveOrUpdate(supplier);
 		s.getTransaction().commit();
-		return list;
+		s.close();		
+		
+		*/
 	}
 	}
 
