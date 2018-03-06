@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,4 +70,25 @@ public class CategoryController {
 		mv.getModelMap().addAttribute("products",productDao.findAll());*/
 		return mv;
 	}	
+	@RequestMapping(value="/updatecategory", method=RequestMethod.GET)
+	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
+		ModelAndView mv=new ModelAndView("update");
+		Category category=categoryDao.findById(cid);
+		mv.getModelMap().addAttribute("category", category);
+		return mv;
+}
+	
+	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateCategory(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("add");
+		Category category=new Category();
+		category.setCid(Integer.parseInt(request.getParameter("cid")));
+		category.setCname(request.getParameter("cname"));
+		category.setCdesc(request.getParameter("cdesc"));
+		categoryDao.update(category);
+		/*mv.getModelMap().addAttribute("categories", categoryDao.findAll());*/
+		return mv;
+		
+	 }
 }

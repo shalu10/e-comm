@@ -63,12 +63,12 @@ public class ProductImpl implements ProductDao{
 	}
 
 	public void update(Product product) {
-		/*Session s=sessionFactory.openSession();
+		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.saveOrUpdate(product);
 		s.getTransaction().commit();
 		s.close();
-		*/
+		
 	}
 
 }

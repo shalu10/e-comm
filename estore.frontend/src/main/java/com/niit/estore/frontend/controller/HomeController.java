@@ -52,6 +52,11 @@ public class HomeController {
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
 	}
+	@RequestMapping(value="/update")
+	public ModelAndView update() {
+		ModelAndView mv=new ModelAndView("update");
+		return mv;
+	}
 	
 /*	@RequestMapping(value="/add")
 	public ModelAndView add() {

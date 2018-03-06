@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,16 +49,7 @@ public class ProductController {
 	@RequestMapping(value="/addproduct", method=RequestMethod.POST)
 	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("add");
-		/*String name=request.getParameter("pname");
-		String quantity=request.getParameter("pquantity");
-		String description=request.getParameter("pdesc");
-		String price=request.getParameter("pprice");
-		Product product=new Product();
-		product.setPname(name);
-		product.setPquantity(quantity);
-		product.setPdesc(description);
-		product.setPprice(price);
-		*/
+		
 		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 	 		Product product =new Product();
@@ -78,11 +70,39 @@ public class ProductController {
 	public ModelAndView delete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("redirect:add");
 		productDao.delete(pid);
-		/*mv.getModelMap().addAttribute("categories", categoryDao.findAll());
-		mv.getModelMap().addAttribute("suppliers",supplierDao.findAll());
-		mv.getModelMap().addAttribute("products",productDao.findAll());*/
+		
 		return mv;
 	}	
+	@RequestMapping(value="/updateproduct", method=RequestMethod.GET)
+	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("update");
+		Product product=productDao.findById(pid);
+		mv.getModelMap().addAttribute("products", product);
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("suppliers", supplierDao.findAll());
+		return mv;
+}
+	
+	@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
+	
+	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("add");
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		Product product =new Product();
+		product.setPid(Integer.parseInt(request.getParameter("pid")));
+		product.setPname(request.getParameter("pname"));
+		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+		product.setPdesc(request.getParameter("pdesc"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimage(request.getParameter("pimage"));
+		product.setCid(category);
+		product.setSid(supplier);
+		productDao.update(product);
+		mv.getModelMap().addAttribute("products", productDao.findAll());
+		return mv;
+		
+	 }
 }
 
 

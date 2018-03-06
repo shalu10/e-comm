@@ -63,12 +63,12 @@ private SessionFactory sessionFactory;
 	}
 
 	public void update(Category category) {
-		/*Session s=sessionFactory.openSession();
+		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.saveOrUpdate(category);
 		s.getTransaction().commit();
 		s.close();		
-		*/
+		
 		
 	}
 

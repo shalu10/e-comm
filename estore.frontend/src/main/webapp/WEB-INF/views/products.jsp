@@ -62,9 +62,12 @@
   </div>
 </div><br> -->
 
-<div class="container">    
+ <div class="container">  
+
   <div class="row">
   <c:forEach items="${products}" var="p">
+  
+  
   <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">${p.pname}</div>
@@ -75,9 +78,11 @@
 	  <div class="col-sm-offset-6 col-centered"><a href="product?id=${p.pid}"
 			role="button" class="btn btn-success btn-sm btn-block">
 	<span class="glyphicon glyphicon-share-alt"></span>View details
-	</a></div>
+	</a><br></div></div>
+	
   </c:forEach>
     </div>
+    
     </div>
 <!--     <div class="col-sm-4"> 
       <div class="panel panel-danger">

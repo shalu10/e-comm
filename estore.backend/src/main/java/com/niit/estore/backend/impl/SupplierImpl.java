@@ -68,13 +68,12 @@ public class SupplierImpl implements SupplierDao {
 	
 
 	public void update(Supplier supplier) {
-		/*Session s=sessionFactory.openSession();
+		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.saveOrUpdate(supplier);
 		s.getTransaction().commit();
 		s.close();		
 		
-		*/
 	}
 	}
 

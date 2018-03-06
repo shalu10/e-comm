@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -73,6 +74,29 @@ public class SupplierController {
 		mv.getModelMap().addAttribute("products",productDao.findAll());*/
 		return mv;
 	}	
+	@RequestMapping(value="/updatesupplier", method=RequestMethod.GET)
+	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int id){
+		ModelAndView mv=new ModelAndView("update");
+		Supplier supplier=supplierDao.findById(id);
+		mv.getModelMap().addAttribute("suppliers", supplier);
+		return mv;
+	}
+	
+	@RequestMapping(value="/updatesupplier", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateSupplier(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("add");
+		Supplier supplier=new Supplier();
+		supplier.setSid(Integer.parseInt(request.getParameter("sid")));
+		supplier.setSname(request.getParameter("sname"));
+		supplier.setSemail(request.getParameter("semail"));
+		supplier.setSaddress(request.getParameter("saddress"));
+		supplier.setScontact(request.getParameter("scontact"));
+		supplierDao.update(supplier);
+		/*mv.getModelMap().addAttribute("stock", supplierDao.findAll());*/
+		return mv;
+		
+	 }
 }
 
 

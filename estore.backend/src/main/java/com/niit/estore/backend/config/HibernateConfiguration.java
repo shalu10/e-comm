@@ -6,6 +6,7 @@ import java.util.Properties;
 
 
 
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -17,6 +18,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.estore.backend.model.Cart;
+import com.niit.estore.backend.model.CartItem;
 import com.niit.estore.backend.model.Category;
 import com.niit.estore.backend.model.Product;
 import com.niit.estore.backend.model.Supplier;
@@ -58,7 +61,9 @@ public class HibernateConfiguration {
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
-		sessionBuilder.addAnnotatedClass(Product.class);//maps the class with table	
+		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(CartItem.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);	//maps the class with table	
 		return sessionBuilder.buildSessionFactory();
 	}
 	  
