@@ -33,11 +33,11 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("index");
 		return mv;
 	}
-	@RequestMapping(value="/login")
+	/*@RequestMapping(value="/login")
 	public ModelAndView login() {
 		ModelAndView mv=new ModelAndView("login");
 		return mv;
-	}
+	}*/
 	@RequestMapping(value="/products", method=RequestMethod.GET)
 	public ModelAndView products() {
 		ModelAndView mv=new ModelAndView("products");
@@ -58,10 +58,10 @@ public class HomeController {
 		return mv;
 	}
 	
-/*	@RequestMapping(value="/add")
-	public ModelAndView add() {
-		ModelAndView mv=new ModelAndView("add");
+	@RequestMapping(value="/cart")
+	public ModelAndView cart() {
+		ModelAndView mv=new ModelAndView("cart");
 		return mv;
-	}*/
+	}
 	
 }

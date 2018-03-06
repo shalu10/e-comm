@@ -40,6 +40,7 @@ public class CartController {
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid, @RequestParam("txtQuantity") int quantity, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv=new ModelAndView("redirect:products");
 		Product product =productDao.findById(pid);
+		/*int stock=product.getPstock();*/
 		HttpSession session=request.getSession(false);
 		Cart cart=null;
 		if(session!=null){
@@ -53,14 +54,19 @@ public class CartController {
 			boolean state=false;
 			for(CartItem c : cart.getItems()){
 				if(c.getProduct().getPname().equals(product.getPname())){
-					c.setQuantity(item.getQuantity());
+					c.setQuantity(quantity+c.getQuantity());
+					/*if(product.getPquantity()!=0) {
+					c.setQuantity(item.getQuantity());*/
 					state=true;
+					
 				}
 			}
 			if(!state)
 			cart.getItems().add(item);
 		}	
+		
 		session.setAttribute("cart", cart);
+		session.setAttribute("cartItems", cart.getItems());
 		return mv;
 	}
 	

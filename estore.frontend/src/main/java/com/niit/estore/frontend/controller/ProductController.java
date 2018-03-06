@@ -74,10 +74,10 @@ public class ProductController {
 		return mv;
 	}	
 	@RequestMapping(value="/updateproduct", method=RequestMethod.GET)
-	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
+	public ModelAndView Update(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
-		Product product=productDao.findById(pid);
-		mv.getModelMap().addAttribute("products", product);
+		Product products=productDao.findById(pid);
+		mv.getModelMap().addAttribute("products", products);
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
 		mv.getModelMap().addAttribute("suppliers", supplierDao.findAll());
 		return mv;
@@ -99,11 +99,19 @@ public class ProductController {
 		product.setCid(category);
 		product.setSid(supplier);
 		productDao.update(product);
-		mv.getModelMap().addAttribute("products", productDao.findAll());
+		/*mv.getModelMap().addAttribute("products", productDao.findAll());*/
 		return mv;
 		
 	 }
+	/*@RequestMapping(value="/cart", method=RequestMethod.GET)
+	public ModelAndView cart(Model model,@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("cart");
+		mv.getModelMap().addAttribute("c", productDao.findById(pid));
+		
+		return mv;
+}*/
 }
+
 
 
 

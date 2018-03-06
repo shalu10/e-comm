@@ -71,10 +71,10 @@ public class CategoryController {
 		return mv;
 	}	
 	@RequestMapping(value="/updatecategory", method=RequestMethod.GET)
-	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
+	public ModelAndView update(Model model,@RequestParam("id") int cid){
 		ModelAndView mv=new ModelAndView("update");
-		Category category=categoryDao.findById(cid);
-		mv.getModelMap().addAttribute("category", category);
+		Category categories=categoryDao.findById(cid);
+		mv.getModelMap().addAttribute("categories", categories);
 		return mv;
 }
 	

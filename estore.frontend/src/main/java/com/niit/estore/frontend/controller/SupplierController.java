@@ -77,8 +77,8 @@ public class SupplierController {
 	@RequestMapping(value="/updatesupplier", method=RequestMethod.GET)
 	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int id){
 		ModelAndView mv=new ModelAndView("update");
-		Supplier supplier=supplierDao.findById(id);
-		mv.getModelMap().addAttribute("suppliers", supplier);
+		Supplier suppliers=supplierDao.findById(id);
+		mv.getModelMap().addAttribute("suppliers", suppliers);
 		return mv;
 	}
 	

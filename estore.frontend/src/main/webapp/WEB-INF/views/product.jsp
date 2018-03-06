@@ -39,10 +39,14 @@
 		<tr><td class="col-sm-2">Price:</td><td align="left">${product.pprice}</td></tr>
 		<tr><td class="col-sm-2">Quantity:</td><td align="pull-right"><input type="text" name="txtQuantity"  /></td></tr>
 		</table></div>
-		 <input type="hidden" name="id" value="${product.pid}" /> 
+		  <input type="hidden" name="id" value="${product.pid}" /> 
         
-		<div class="panel-footer"><button type="submit" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
-		</button></div>
+		<div class="panel-footer">
+		<%-- <a href="addToCart?id=${product.pid}"> --%>
+		<button type="submit" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></a>
+		</button>
+		<!-- </a> -->
+		</div>
 	</div>
 	<div class="col-sm-offset-5 col-centered"><a href="products"
 			role="button" class="btn btn-success btn-sm btn-block">

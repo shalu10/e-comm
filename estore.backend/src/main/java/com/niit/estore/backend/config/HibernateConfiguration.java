@@ -37,7 +37,7 @@ public class HibernateConfiguration {
         datasource.setDriverClassName("org.h2.Driver");
         //jdbc:oracle:thin:@localhost:1521:SID
         //jdbc:mysql://localhost:3306/test
-        datasource.setUrl("jdbc:h2:tcp://localhost/~/demo1");
+        datasource.setUrl("jdbc:h2:tcp://localhost/~/demo");
         datasource.setUsername("sa");
         datasource.setPassword("");		
 		return datasource;
