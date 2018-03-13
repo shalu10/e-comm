@@ -87,7 +87,7 @@ public class CategoryController {
 		category.setCname(request.getParameter("cname"));
 		category.setCdesc(request.getParameter("cdesc"));
 		categoryDao.update(category);
-		/*mv.getModelMap().addAttribute("categories", categoryDao.findAll());*/
+		mv.getModelMap().addAttribute("add", categoryDao.findAll());
 		return mv;
 		
 	 }

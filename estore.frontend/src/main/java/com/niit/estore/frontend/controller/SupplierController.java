@@ -75,9 +75,9 @@ public class SupplierController {
 		return mv;
 	}	
 	@RequestMapping(value="/updatesupplier", method=RequestMethod.GET)
-	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int id){
+	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int sid){
 		ModelAndView mv=new ModelAndView("update");
-		Supplier suppliers=supplierDao.findById(id);
+		Supplier suppliers=supplierDao.findById(sid);
 		mv.getModelMap().addAttribute("suppliers", suppliers);
 		return mv;
 	}
@@ -93,7 +93,7 @@ public class SupplierController {
 		supplier.setSaddress(request.getParameter("saddress"));
 		supplier.setScontact(request.getParameter("scontact"));
 		supplierDao.update(supplier);
-		/*mv.getModelMap().addAttribute("stock", supplierDao.findAll());*/
+		mv.getModelMap().addAttribute("add", supplierDao.findAll());
 		return mv;
 		
 	 }

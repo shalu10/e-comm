@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -8,7 +10,7 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        
+        </div>
        <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav navbar-right">
           			<li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>
@@ -34,7 +36,7 @@
 			
 		</div>
      
-     </div>
+     
      
 </nav>
      

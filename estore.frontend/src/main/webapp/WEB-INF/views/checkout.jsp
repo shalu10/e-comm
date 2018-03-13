@@ -13,21 +13,21 @@
     <h1 class="w3-xxxlarge"><b>THE BICYCLE SHOP</b></h1>
     <h4>You create the <span class="w3-tag">journey</span> we supply the <span class="w3-tag">parts</span></h4>
   </header>
-  <div id="content">
+  <%-- <div id="content">
 		<h1>Checkout</h1>
  
 					 <c:forEach items="${sessionScope['cartItems']}" var="item"> 
   
  <div class="row">  
     <div class="col-sm-12">
-	  <div align="center" class="col-sm-2 panel-body">${item.product.pimage}</div>
+	  <div align="center" class="col-sm-2 panel-body">${item.product.pid}</div>
       <div align="center" class="col-sm-2 panel-body">${item.product.pname}</div>
       <div align="center" class="col-sm-2 panel-body">${item.quantity}</div>
       <div align="center" class="col-sm-2 panel-body">${item.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">${item.quantity * item.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">
-      <%-- <a href="product?id=${c.p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="deleteitem?id=${c.p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a> --%>
+      <a href="product?id=${c.p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="deleteitem?id=${c.p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
       
        
@@ -44,9 +44,10 @@
 			<p id="sub-total">
 				<strong>Total</strong>: <span id="stotal"></span>
 			</p>
-		 </div>
+		 </div> --%>
 		 
 		 <form action="order.jsp" method="post" id="checkout-order-form">
+		 <div class="container">
 		 	<h2>Your Details</h2>
 		 	
 		 	<fieldset id="fieldset-billing">
@@ -318,7 +319,7 @@
 		 		</div>
 		 	</fieldset>
 		 	
-		 	<div id="shipping-same">Same as Billing <input type="checkbox" id="same-as-billing" value=""/></div>
+		 	<div id="shipping-same">Same as Billing <input type="checkbox" id="toshipping_checkbox" value=""/></div>
 		 	
 		 	<fieldset id="fieldset-shipping">
 		 		
@@ -326,27 +327,27 @@
 		 		
 		 		<div>
 		 			<label for="sname">Name</label>
-		 			<input type="text" name="sname" id="sname" data-type="string" data-message="This field cannot be empty" />
+		 			<input type="text" name="sname" id="shipping_name" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
 		 		<div>
 		 			<label for="semail">Email</label>
-		 			<input type="text" name="semail" id="semail" data-type="expression" data-message="Not a valid email address" />
+		 			<input type="text" name="semail" id="shipping_email" data-type="expression" data-message="Not a valid email address" />
 		 		</div>
 		 		<div>
 		 			<label for="scity">City</label>
-		 			<input type="text" name="scity" id="scity" data-type="string" data-message="This field cannot be empty" />
+		 			<input type="text" name="scity" id="shipping_city" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
 		 		<div>
 		 			<label for="saddress">Address</label>
-		 			<input type="text" name="saddress" id="saddress" data-type="string" data-message="This field cannot be empty" />
+		 			<input type="text" name="saddress" id="shipping_address" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
 		 		<div>
 		 			<label for="szip">ZIP Code</label>
-		 			<input type="text" name="szip" id="szip" data-type="string" data-message="This field cannot be empty" />
+		 			<input type="text" name="szip" id="shipping_zip" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
 		 		<div>
 		 			<label for="scountry">Country</label>
-		 			<select name="scountry" id="scountry" data-type="string" data-message="This field cannot be empty">
+		 			<select name="scountry" id="shipping_country" data-type="string" data-message="This field cannot be empty">
 		 				<option value="" selected="selected">(please select a country)</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
@@ -592,18 +593,26 @@
 		 	</fieldset>
 		 	<div class="form-group">
   					
-    &nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    &nbsp&nbsp<a href="order" button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button></a>
   </div>
 </div>
-		 	<!-- <p><input type="submit" id="submit-order" value="Submit" class="btn btn-warning" /></p> -->
+		 	
 		 
-		 </form>
+		  </form>
 	</div>
 	
-	
+	</div>
 
-</div>
 
+<script >
+$("#toshipping_checkbox").on("click",function(){
+    var ship = $(this).is(":checked");
+    $("[id^='shipping_']").each(function(){
+      var tmpID = this.id.split('shipping_')[1];
+      $(this).val(ship?$("#"+tmpID).val():"");
+    });
+});
+</script>
 
 
 

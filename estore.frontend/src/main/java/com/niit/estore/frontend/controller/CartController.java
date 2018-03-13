@@ -38,7 +38,7 @@ public class CartController {
 	
 	@RequestMapping(value="addToCart", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid, @RequestParam("txtQuantity") int quantity, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView("redirect:products");
+		ModelAndView mv=new ModelAndView("redirect:cart");
 		Product product =productDao.findById(pid);
 		/*int stock=product.getPstock();*/
 		HttpSession session=request.getSession(false);
@@ -72,7 +72,7 @@ public class CartController {
 	
 	@RequestMapping(value="deleteitem", method=RequestMethod.GET)
 	public ModelAndView delete(Model model,@RequestParam("id") int pid, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView("redirect:products");
+		ModelAndView mv=new ModelAndView("redirect:cart");
 		Product product =productDao.findById(pid);
 		HttpSession session=request.getSession(false);
 		Cart cart=null;
@@ -92,13 +92,5 @@ public class CartController {
 		}session.setAttribute("cart", cart);
 			return mv;
 	}
-	/*@RequestMapping(value="deleteitem", method=RequestMethod.GET)
-	public ModelAndView delete(@RequestParam("id") int pid){
-		ModelAndView mv=new ModelAndView("redirect:add");
-		productDao.delete(pid);
-		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
-		mv.getModelMap().addAttribute("suppliers",supplierDao.findAll());
-		mv.getModelMap().addAttribute("products",productDao.findAll());
-		return mv;
-	}	*/
+	
 }

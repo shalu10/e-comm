@@ -45,7 +45,7 @@
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add" action="addcategory" method="POST" role="form" style="display: block;" >
 									
-									
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<div class="form-group">
 										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" >
 									</div>
@@ -97,7 +97,7 @@
     	</td>
     	
     	<td><a href="deletecategory?id=${c.cid }"type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
-        <a href="update" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+        <a href="updatecategory?id=${c.cid }" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
 
@@ -119,7 +119,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addsupplier" method="POST" role="form" style="display: block;" >
-									
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									
 									<div class="form-group">
 										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" >
@@ -186,7 +186,7 @@
     	</td>
     	
     	<td><a href="deletesupplier?id=${s.sid } "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
-        <a href="" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+        <a href="updatesupplier?id=${s.sid }" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
     
@@ -217,7 +217,7 @@
     	%> --%>
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addproduct" method="POST" role="form" style="display: block;" >
-																		
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>										
 									<div class="form-group">
 									<select   class="form-control" name="sid" id="sid" tabindex="1" >
 										<option value="Select name"> Select Supplier Name</option>
@@ -303,7 +303,7 @@
     	</td>
     	
     	<td><a href="deleteproduct?id=${p.pid } "type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
-        <a href="update"<%-- product?id=${c.p.pid} --%> type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
+        <a href="updateproduct?id=${p.pid }" type="button" class="btn btn-warning btn-sm"> <span class="glyphicon glyphicon-edit"></span></a></td>
     	</tr>
     </c:forEach>
     </table>

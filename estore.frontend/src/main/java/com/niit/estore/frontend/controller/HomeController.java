@@ -57,11 +57,25 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("update");
 		return mv;
 	}
+	@RequestMapping(value="/update1")
+	public ModelAndView update1() {
+		ModelAndView mv=new ModelAndView("update1");
+		return mv;
+	}
 	
 	@RequestMapping(value="/cart")
 	public ModelAndView cart() {
 		ModelAndView mv=new ModelAndView("cart");
 		return mv;
 	}
-	
+	@RequestMapping(value="/order")
+	public ModelAndView order() {
+		ModelAndView mv=new ModelAndView("order");
+		return mv;
+	}
+	@RequestMapping(value="/payment")
+	public ModelAndView payment() {
+		ModelAndView mv=new ModelAndView("payment");
+		return mv;
+	}
 }

@@ -23,7 +23,7 @@
     <div class="col-sm-12">
     <form id="add" action="cart" method="GET" role="form" style="display: block;" > 
       <div class="panel panel-primary">
-      <div align="center" class="col-sm-2 panel-heading">Product Image</div>
+       <div align="center" class="col-sm-2 panel-heading">Product Id</div>
       <div align="center" class="col-sm-2 panel-heading">Product Name</div>
       <div align="center" class="col-sm-2 panel-heading">Quantity</div>
       <div align="center" class="col-sm-2 panel-heading">Cost</div>
@@ -35,14 +35,14 @@
   
  <div class="row">  
     <div class="col-sm-12">
-	  <div align="center" class="col-sm-2 panel-body">${item.product.pimage}</div>
+	  <div align="center" class="col-sm-2 panel-body">${item.product.pid}</div> 
       <div align="center" class="col-sm-2 panel-body">${item.product.pname}</div>
       <div align="center" class="col-sm-2 panel-body">${item.quantity}</div>
       <div align="center" class="col-sm-2 panel-body">${item.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">${item.quantity * item.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">
-      <a href="product?id=${c.p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="deleteitem?id=${c.p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      <a href="product?id=${item.product.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="deleteitem?id=${item.product.pid}" type="button" class="btn btn-danger btn-sm "onclick="return confirm('Are you sure?')" ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
       
        
